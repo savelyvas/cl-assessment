@@ -8,6 +8,7 @@ const totalQuestionsSpan = document.getElementById('total-questions');
 const progressFill = document.getElementById('progress');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
+const autoFillBtn = document.getElementById('auto-fill-btn');
 const questionSection = document.getElementById('question-section');
 const resultsSection = document.getElementById('results-section');
 const resultsContent = document.getElementById('results-content');
@@ -79,6 +80,17 @@ nextBtn.addEventListener('click', () => {
   }
 });
 
+autoFillBtn.addEventListener('click', () => {
+  // Fill all remaining questions with random answers
+  for (let i = currentQuestion; i < questions.length; i++) {
+    const randomOptionIndex = Math.floor(Math.random() * questions[i].options.length);
+    answers[i] = randomOptionIndex;
+  }
+  
+  // Go directly to results
+  showResults();
+});
+
 async function showResults() {
   // Convert answers to the format expected by the server
   const answerData = answers.map((answerIndex, questionIndex) => {
@@ -145,13 +157,19 @@ function displayResults(results) {
   html += '<div class="top-strengths">';
   results.topStrengths.forEach((strength, index) => {
     const domainClass = strength.domain ? strength.domain.toLowerCase().replace(/\s+/g, '-') : '';
+    const themeData = themeDescriptions[strength.key];
+    const description = themeData ? themeData.tagline : '';
+    const topStrength = themeData && themeData.strengths ? themeData.strengths[0] : '';
+    
     html += `
       <div class="strength-card ${domainClass}">
         <div class="strength-rank">#${index + 1}</div>
         <div class="strength-name">${strength.name}</div>
         ${strength.domain ? `<div class="strength-domain">${strength.domain}</div>` : ''}
+        ${description ? `<div class="strength-description">${description}</div>` : ''}
+        ${topStrength ? `<div class="strength-preview">✓ ${topStrength}</div>` : ''}
         <div class="strength-score">Score: ${strength.score}</div>
-        <a href="theme.html?theme=${strength.key}" class="theme-link">Learn More →</a>
+        <a href="theme.html?theme=${strength.key}" class="theme-link">View Full Details →</a>
       </div>
     `;
   });
