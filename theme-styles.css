@@ -1,0 +1,149 @@
+.back-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.back-link:hover {
+  opacity: 1;
+}
+
+#theme-container {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.theme-detail-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.theme-domain-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.theme-domain-badge.executing {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.theme-domain-badge.influencing {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+}
+
+.theme-domain-badge.relationship-building {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: white;
+}
+
+.theme-domain-badge.strategic-thinking {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  color: white;
+}
+
+#theme-name {
+  font-size: 2.5rem;
+  color: #333;
+  margin: 15px 0;
+}
+
+#theme-tagline {
+  font-size: 1.2rem;
+  color: #666;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.theme-section {
+  margin-bottom: 40px;
+}
+
+.theme-section h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#theme-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.theme-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.theme-section li {
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 50px;
+}
+
+.strengths-section li {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  color: #2e7d32;
+}
+
+.strengths-section li::before {
+  content: "✓";
+  position: absolute;
+  left: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.challenges-section li {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  color: #e65100;
+}
+
+.challenges-section li::before {
+  content: "!";
+  position: absolute;
+  left: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e65100;
+}
+
+.theme-actions {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 2px solid #e0e0e0;
+}
+
+@media (max-width: 600px) {
+  #theme-container {
+    padding: 20px;
+  }
+  
+  #theme-name {
+    font-size: 2rem;
+  }
+  
+  .theme-section h3 {
+    font-size: 1.5rem;
+  }
+}

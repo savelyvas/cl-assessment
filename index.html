@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CliftonStrengths Assessment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>CliftonStrengths Assessment</h1>
+      <p>Discover your unique combination of talents</p>
+    </header>
+
+    <div id="assessment-container">
+      <div id="question-section">
+        <div class="progress-bar">
+          <div id="progress" class="progress-fill"></div>
+        </div>
+        <p class="question-counter">Question <span id="current-question">1</span> of <span id="total-questions">20</span></p>
+        
+        <div id="question-card">
+          <h2 id="question-text"></h2>
+          <div id="options-container"></div>
+        </div>
+
+        <div class="navigation">
+          <button id="prev-btn" class="btn btn-secondary" disabled>Previous</button>
+          <button id="next-btn" class="btn btn-primary">Next</button>
+        </div>
+      </div>
+
+      <div id="results-section" style="display: none;">
+        <h2>Your CliftonStrengths Results</h2>
+        <div id="results-content"></div>
+        <button id="restart-btn" class="btn btn-primary">Take Assessment Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="theme-data.js"></script>
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
