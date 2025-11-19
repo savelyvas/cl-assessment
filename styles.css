@@ -393,8 +393,26 @@ header p {
   font-size: 0.9rem;
 }
 
-#restart-btn {
+.results-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
   margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.results-actions .btn {
+  min-width: 200px;
+}
+
+@media (max-width: 600px) {
+  .results-actions {
+    flex-direction: column;
+  }
+  
+  .results-actions .btn {
+    width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
