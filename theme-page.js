@@ -6,7 +6,7 @@ if (themeKey && themeDescriptions[themeKey]) {
   const theme = themeDescriptions[themeKey];
   
   // Set page title
-  document.title = `${theme.name} - CliftonStrengths`;
+  document.title = `${theme.name} - S-Strengths`;
   
   // Set domain badge
   const domainBadge = document.querySelector('.theme-domain-badge');

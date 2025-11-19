@@ -149,7 +149,7 @@ function displayResults(results) {
   resultsSection.style.display = 'block';
   
   let html = '<div class="results-header">';
-  html += '<h3>Your Top 5 CliftonStrengths</h3>';
+  html += '<h3>Your Top 5 S-Strengths</h3>';
   
   if (results.dominantDomain) {
     html += `<p class="dominant-domain">Your dominant domain: <strong>${results.dominantDomain}</strong></p>`;
@@ -250,7 +250,7 @@ exportPdfBtn.addEventListener('click', () => {
   // Title
   doc.setFontSize(20);
   doc.setFont(undefined, 'bold');
-  doc.text('CliftonStrengths Assessment Results', margin, yPos);
+  doc.text('S-Strengths Assessment Results', margin, yPos);
   yPos += 15;
   
   // Date
@@ -378,7 +378,7 @@ exportPdfBtn.addEventListener('click', () => {
   
   doc.setFontSize(18);
   doc.setFont(undefined, 'bold');
-  doc.text('All 34 CliftonStrengths Themes', margin, yPos);
+  doc.text('All 34 S-Strengths Themes', margin, yPos);
   yPos += 15;
   
   // Get all themes sorted by domain
@@ -472,7 +472,7 @@ exportPdfBtn.addEventListener('click', () => {
   });
   
   // Save PDF
-  doc.save('CliftonStrengths-Results.pdf');
+  doc.save('S-Strengths-Results.pdf');
 });
 
 renderQuestion();

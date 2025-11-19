@@ -1,4 +1,4 @@
-// CliftonStrengths 34 Themes organized by domains:
+// S-Strengths 34 Themes organized by domains:
 // EXECUTING: Achiever, Arranger, Belief, Consistency, Deliberative, Discipline, Focus, Responsibility, Restorative
 // INFLUENCING: Activator, Command, Communication, Competition, Maximizer, Self-Assurance, Significance, Woo
 // RELATIONSHIP BUILDING: Adaptability, Connectedness, Developer, Empathy, Harmony, Includer, Individualization, Positivity, Relator
