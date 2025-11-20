@@ -14,7 +14,75 @@
     </header>
 
     <div id="assessment-container">
-      <div id="question-section">
+      <div id="landing-section">
+        <h2>Welcome to S-Strengths Assessment</h2>
+        
+        <div class="landing-content">
+          <div class="info-section">
+            <h3>About This Assessment</h3>
+            <p>The S-Strengths Assessment is a comprehensive personality and strengths evaluation tool designed to help you discover your unique combination of talents across 34 distinct themes.</p>
+            
+            <p>This assessment is <strong>inspired by the CliftonStrengths methodology</strong> but is an independent implementation and does not represent the official CliftonStrengths assessment developed by Gallup, Inc.</p>
+            
+            <h3>What You'll Discover</h3>
+            <ul>
+              <li><strong>Your Top 5 Strengths:</strong> Identify your dominant talents</li>
+              <li><strong>Complete Theme Ranking:</strong> See all 34 themes ranked by your responses</li>
+              <li><strong>Four Domains:</strong> Understand your strengths across Executing, Influencing, Relationship Building, and Strategic Thinking</li>
+              <li><strong>Detailed Insights:</strong> Learn what you do well and potential challenges for each strength</li>
+            </ul>
+            
+            <h3>Assessment Details</h3>
+            <ul>
+              <li>40 questions covering all 34 strength themes</li>
+              <li>Takes approximately 10-15 minutes to complete</li>
+              <li>Export your results to PDF or CSV</li>
+              <li>No registration required</li>
+            </ul>
+          </div>
+          
+          <div class="disclaimer-section">
+            <h3>⚠️ Legal Disclaimer</h3>
+            <div class="disclaimer-box">
+              <p><strong>IMPORTANT: Please read carefully before proceeding.</strong></p>
+              
+              <p>This S-Strengths Assessment is provided for informational and educational purposes only. By using this assessment, you acknowledge and agree to the following:</p>
+              
+              <ul>
+                <li>This assessment is NOT a substitute for professional psychological evaluation, career counseling, or medical advice.</li>
+                <li>Results are based on self-reported responses and may not be scientifically validated.</li>
+                <li>The creators and operators of this assessment make NO WARRANTIES, express or implied, regarding the accuracy, completeness, or reliability of the results.</li>
+                <li>You assume FULL RESPONSIBILITY for any decisions or actions taken based on the assessment results.</li>
+                <li>The assessment creators and operators SHALL NOT BE LIABLE for any direct, indirect, incidental, consequential, or special damages arising from your use of this assessment.</li>
+                <li>This assessment is not affiliated with, endorsed by, or connected to Gallup, Inc. or the official CliftonStrengths assessment.</li>
+                <li>Results should be used as a starting point for self-reflection, not as definitive conclusions about your abilities or potential.</li>
+              </ul>
+              
+              <p><strong>By checking the box below and clicking "Start Assessment," you acknowledge that you have read, understood, and agree to this disclaimer.</strong></p>
+            </div>
+            
+            <div class="consent-checkbox">
+              <label>
+                <input type="checkbox" id="consent-checkbox">
+                <span>I have read and agree to the terms and disclaimer above</span>
+              </label>
+            </div>
+            
+            <button id="start-assessment-btn" class="btn btn-primary" disabled>Start Assessment</button>
+            
+            <div class="load-csv-section">
+              <h3>Or Load Previous Results</h3>
+              <p>Have a previously saved CSV file? Upload it to view your results again.</p>
+              <p class="consent-note"><em>Note: You must accept the disclaimer above to load previous results.</em></p>
+              <input type="file" id="csv-file-input" accept=".csv" style="display: none;">
+              <button id="load-csv-btn" class="btn btn-secondary" disabled>Load CSV File</button>
+              <div id="csv-error" class="error-message" style="display: none;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="question-section" style="display: none;">
         <div class="progress-bar">
           <div id="progress" class="progress-fill"></div>
         </div>
@@ -37,7 +105,35 @@
         <div id="results-content"></div>
         <div class="results-actions">
           <button id="export-pdf-btn" class="btn btn-primary">Export to PDF</button>
+          <button id="export-csv-btn" class="btn btn-primary">Export to CSV</button>
+          <button id="email-results-btn" class="btn btn-secondary" disabled>Email Results (coming soon)</button>
           <button id="restart-btn" class="btn btn-secondary">Take Assessment Again</button>
+        </div>
+        
+        <div id="email-modal" class="modal" style="display: none;">
+          <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Email Your Results</h3>
+            <p>Enter your email address to receive your S-Strengths assessment results.</p>
+            
+            <div class="email-form">
+              <input type="email" id="email-input" placeholder="your.email@example.com" required>
+              
+              <div class="email-options">
+                <label>
+                  <input type="checkbox" id="include-pdf" checked>
+                  Include PDF Report
+                </label>
+                <label>
+                  <input type="checkbox" id="include-csv" checked>
+                  Include CSV Data
+                </label>
+              </div>
+              
+              <button id="send-email-btn" class="btn btn-primary">Send Email</button>
+              <div id="email-status" class="status-message"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
